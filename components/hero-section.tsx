@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Rocket, Star } from "lucide-react"
@@ -22,15 +21,9 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/hero-main.jpg"
-          alt="Wells Studio - Создание сайтов и ботов"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/20 to-background" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-background via-primary/5 to-background">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-pink-500/10 via-transparent to-transparent" />
       </div>
 
       <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
@@ -50,17 +43,6 @@ export function HeroSection() {
         ))}
       </div>
 
-      <Image
-        src="/images/meteors.png"
-        alt="Метеоры"
-        width={350}
-        height={500}
-        className="absolute left-0 top-32 opacity-20 pointer-events-none hidden lg:block"
-        style={{
-          transform: `translate(${mousePosition.x * -0.5}px, ${mousePosition.y * -0.5}px)`,
-          transition: "transform 0.3s ease-out",
-        }}
-      />
 
       <div className="container mx-auto px-4 z-10 pt-20 md:pt-24">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -110,21 +92,16 @@ export function HeroSection() {
 
           <div className="relative hidden lg:flex items-center justify-center">
             <div
-              className="relative animate-float"
+              className="relative animate-float w-[500px] h-[600px]"
               style={{
                 transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
                 transition: "transform 0.5s ease-out",
               }}
             >
               <div className="absolute inset-0 blur-3xl bg-gradient-to-r from-primary/30 via-pink-500/20 to-accent/30 rounded-full scale-75" />
-              <Image
-                src="/images/astronaut.png"
-                alt="Астронавт Wells Studio"
-                width={500}
-                height={600}
-                className="relative z-10 drop-shadow-2xl"
-                priority
-              />
+              <div className="relative z-10 w-full h-full flex items-center justify-center">
+                <Rocket className="w-64 h-64 text-primary/20" />
+              </div>
             </div>
           </div>
         </div>
